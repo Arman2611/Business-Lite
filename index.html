@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Business Website</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" defer></script>
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<span class="logo-black">Bis</span>
+			<span class="logo-blue">Lite</span>
+		</div>
+		<nav>
+			<a href="#">Home</a>
+			<a href="#">About us</a>
+			<div id="menu-services">
+				<button id="button-services" href="#">Services
+					<span class="arrow-down"></span>
+				</button>
+				<div class="submenu-container">
+					<div id="submenu-services" class="submenu">
+						<a href="#">Web Design</a>
+						<a href="#">Wordpress Design</a>
+						<a href="#">Mobile App Development</a>
+						<a href="#">Internet Marketing</a>
+						<a href="#">Social Media Management</a>
+					</div>
+				</div>
+			</div>
+			<div id="menu-portfolio">
+				<button id="button-portfolio" href="#">Portfolio
+					<span class="arrow-down"></span>
+				</button>
+				<div class="submenu-container">
+					<div id="submenu-portfolio" class="submenu">
+						<a href="#">All</a>
+						<a href="#">Websites</a>
+						<a href="#">Wordpress</a>
+						<a href="#">Mobile Apps</a>
+						<a href="#">Icons</a>
+						<a href="#">Logos</a>
+						<a href="#">Graphics</a>
+					</div>
+				</div>
+			</div>
+			<a href="#">Blog</a>
+			<a href="#">Contact us</a>
+		</nav>
+	</header>
+	<main>
+		<div id="slider">
+			<div class="slider-images">
+				<div class="slide active-slide">
+					<img src="images/slides/1.jpg" alt="">
+					<div class="slider-text">
+						<p>We design clean, crisp & memorable icons 1</p>
+					</div>
+				</div>
+				<div class="slide">
+					<img src="images/slides/1.jpg" alt="">
+					<div class="slider-text">
+						<p>We design clean, crisp & memorable icons 2</p>
+					</div>
+				</div>
+				<div class="slide">
+					<img src="images/slides/1.jpg" alt="">
+					<div class="slider-text">
+						<p>We design clean, crisp & memorable icons 3</p>
+					</div>
+				</div>
+				<div class="slide">
+					<img src="images/slides/1.jpg" alt="">
+					<div class="slider-text">
+						<p>We design clean, crisp & memorable icons 4</p>
+					</div>
+				</div>
+				<div class="slide">
+					<img src="images/slides/1.jpg" alt="">
+					<div class="slider-text">
+						<p>We design clean, crisp & memorable icons 5</p>
+					</div>
+				</div>
+			</div>
+			<div class="slider-dots">
+				<span class="slider-dot active-dot" onclick="showSlide(0)"></span>
+				<span class="slider-dot" onclick="showSlide(1)"></span>
+				<span class="slider-dot" onclick="showSlide(2)"></span>
+				<span class="slider-dot" onclick="showSlide(3)"></span>
+				<span class="slider-dot" onclick="showSlide(4)"></span>
+			</div>
+		</div>
+		<div class="skills">
+			<div class="skills-cell">
+				<div class="skills-cell-top">
+					<span class="icon-pencil"></span>
+					<h3>Clean Theme</h3>
+				</div>				
+				<p>Ut nec lorem id orci convallis porta. Donec pharetra neque eu velit dictum molestie. Duis porta gravida augue sed viverra. Quisque at nulla leo, non aliquet mi.</p>
+				<a href="#">
+					<span></span>Read More
+				</a>
+			</div>
+			<div class="skills-cell">
+				<div class="skills-cell-top">
+					<span class="icon-laptop"></span>
+					<h3>Responsive design</h3>
+				</div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi euismod placerat dui et tincidunt. Sed sollicitudin posuere auctor. Phasellus at ultricies nisl. Integer at leo eros.</p>
+				<a href="#">
+					<span></span>Read More
+				</a>
+			</div>
+			<div class="skills-cell">
+				<div class="skills-cell-top">
+					<span class="icon-bars"></span>
+					<h3>Full layered PSD</h3>
+				</div>
+				<p> Phasellus lobortis metus non augue sodales volutpat. Vestibulum sit amet nibh eros, hendrerit venenatis est. In vitae nulla nec purus cursus pretium sed id magna. </p>
+				<a href="#">
+					<span></span>Read More
+				</a>
+			</div>
+			<div class="skills-cell">
+				<div class="skills-cell-top">
+					<span class="icon-plane"></span>
+					<h3>Ready for coding</h3>
+				</div>				
+				<p>Vivamus convallis feugiat mauris sed posuere. Nam rutrum, quam quis euismod commodo, elit est porta quam, non placerat eros neque porta ante. Fusce quis odio urna. </p>
+				<a href="#">
+					<span></span>Read More
+				</a>
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="works">
+				<div class="works-header">
+					<span class="icon-cursor"></span>
+					<h3>Latest works</h3>
+					<div class="works-buffer"></div>
+					<div class="works-arrows">
+						<span id="works-prev"></span>
+						<span id="works-next"></span>
+					</div>
+				</div>
+				<hr>
+				<div class="works-examples">
+					<div id="works-wrapper">
+						<div class="works-cell">
+							<img src="images/works/1.jpg" alt="">
+							<div class="work-overlay">
+								<span class="icon-preview"></span>
+								<span class="icon-link"></span>
+							</div>
+						</div>
+						<div class="works-cell">
+							<img src="images/works/2.jpg" alt="">
+							<div class="work-overlay">
+								<span class="icon-preview"></span>
+								<span class="icon-link"></span>
+							</div>
+						</div>
+						<div class="works-cell">
+							<img src="images/works/3.jpg" alt="">
+							<div class="work-overlay">
+								<span class="icon-preview"></span>
+								<span class="icon-link"></span>
+							</div>
+						</div>
+						<div class="works-cell">
+							<img src="images/works/4.jpg" alt="">
+							<div class="work-overlay">
+								<span class="icon-preview"></span>
+								<span class="icon-link"></span>
+							</div>
+						</div>
+						<div class="works-cell">
+							<img src="images/works/1.jpg" alt="">
+							<div class="work-overlay">
+								<span class="icon-preview"></span>
+								<span class="icon-link"></span>
+							</div>
+						</div>
+						<div class="works-cell">
+							<img src="images/works/2.jpg" alt="">
+							<div class="work-overlay">
+								<span class="icon-preview"></span>
+								<span class="icon-link"></span>
+							</div>
+						</div>
+						<div class="works-cell">
+							<img src="images/works/3.jpg" alt="">
+							<div class="work-overlay">
+								<span class="icon-preview"></span>
+								<span class="icon-link"></span>
+							</div>
+						</div>
+						<div class="works-cell">
+							<img src="images/works/4.jpg" alt="">
+							<div class="work-overlay">
+								<span class="icon-preview"></span>
+								<span class="icon-link"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr>
+			</div>
+			<div class="testimonals">
+				<div class="testimonals-header">
+					<span class="icon-comment"></span>
+					<h3>Testimonals</h3>
+				</div>
+				<p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut nulla sapien, at aliquam erat. Sed vitae massa tellus. Aliquam commodo aliquam metus, sed iaculis nibh tempus id. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam nec nisi in nisl euismod fringilla.</p>
+				<p class="author">John Travis, CEO, DomainName.com</p>
+			</div>
+			<div class="clients">
+				<div class="clients-header">
+					<span class="icon-users"></span>
+					<h3>Our clients</h3>
+				</div>
+				<div class="clients-box">
+					<div class="client-cell">
+						<img src="images/clients/1.png" alt="">
+					</div>
+					<div class="client-cell">
+						<img src="images/clients/2.png" alt="">
+					</div>
+					<div class="client-cell">
+						<img src="images/clients/3.png" alt="">
+					</div>
+					<div class="client-cell">
+						<img src="images/clients/4.png" alt="">
+					</div>
+					<div class="client-cell">
+						<img src="images/clients/5.png" alt="">
+					</div>
+					<div class="client-cell">
+						<img src="images/clients/6.png" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="download">
+				<p>This is a clean and modern, four column website PSD template. You can code it into a Wordpress website, HTML5 responsive website for your personal or client works. So ahead and download this wonderful PSD template! </p>
+				<a href="#">
+					<span></span>Download PSD
+				</a>
+			</div>
+		</div>
+	</main>
+	<footer></footer>
+</body>
+</html>
