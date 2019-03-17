@@ -79,32 +79,51 @@ setInterval(slideTimer, 1000)
 
 // Works section carousel
 
-var worksWrappper = document.getElementById('works-wrapper');
+var worksWrapper = document.getElementById('works-wrapper');
 var worksPrev = document.getElementById('works-prev');
 var worksNext = document.getElementById('works-next');
 
+var worksCount = worksWrapper.children.length;
 var distance = 0;
-var worksCount = worksWrappper.children.length;
-var range = (worksCount-4)*260 - 20;
+var carouselLength = (worksCount*260)-40;
+var equalizer = 0;
+
 
 function moveCarousel () {
-	worksWrappper.style.transform = `translateX(${-distance}px)`;
+	worksWrapper.style.transform = `translateX(${-distance}px)`;
 }
 
 function stepLeft () {
 	if (distance >= 260) {
-		distance -= 260;
+		if (equalizer != 0) {
+			distance -= equalizer;
+			equalizer = 0;
+		} else {
+			distance -= 260;
+		};
+		moveCarousel();
 	}
-	moveCarousel();
 }
 function stepRight () {
-	if (distance <= range)
-	distance += 260;
-	moveCarousel();
+	if (distance < carouselLength-worksWrapper.clientWidth-260) {
+		distance += 260;
+		moveCarousel();
+	} else {
+		equalizer = carouselLength-(worksWrapper.clientWidth + distance);
+		distance += equalizer;
+		moveCarousel();
+	}
 }
-
+// worksWrapper.clientWidth + distance <= length.
 worksPrev.onclick = stepLeft;
 worksNext.onclick = stepRight;
+
+window.addEventListener('resize', function () {
+	if (distance != 0) {
+		distance = 0;
+		moveCarousel();
+	};
+})
 
 
 // Works section overlays
@@ -128,4 +147,39 @@ for (let i = 0; i < works.length; i++) {
 		showOverlay(i);
 	});
 	works[i].addEventListener("mouseleave", hideOverlays);
+}
+
+// Desktop-Mobile Menu switcher
+
+var openMenuIcons = document.getElementsByClassName('icon-menu');
+var closeMenuIcons = document.getElementsByClassName('icon-close');
+var mobileNavBox = document.getElementById('mobile-nav-box');
+var menuSwitcherIsBusy = false;
+
+function openMobileMenu () {
+	if (menuSwitcherIsBusy == false) {
+		menuSwitcherIsBusy = true;
+		setTimeout(function () {
+			menuSwitcherIsBusy = false;
+		}, 600);
+		mobileNavBox.style.display = "flex";
+		mobileNavBox.classList.remove("close-mobile-menu");
+		mobileNavBox.classList.add("show-mobile-menu");
+	};
+}
+function closeMobileMenu () {
+	if (menuSwitcherIsBusy == false) {
+		menuSwitcherIsBusy = true;
+		setTimeout(function () {
+			menuSwitcherIsBusy = false;
+			mobileNavBox.style.display = "none";
+		}, 600);
+		mobileNavBox.classList.remove("show-mobile-menu");
+		mobileNavBox.classList.add("close-mobile-menu");
+	};
+}
+
+for (let i = 0; i < 2; i++) {
+	openMenuIcons[i].onclick = openMobileMenu;
+	closeMenuIcons[i].onclick = closeMobileMenu;
 }
